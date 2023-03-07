@@ -15,6 +15,6 @@ def top_ten(subreddit):
         datas = value['data']['children']
         for each in datas:
             title = each['data']['title']
-            return title
-        else:
-            return 0
+            print(title)
+    else:
+        print('None')

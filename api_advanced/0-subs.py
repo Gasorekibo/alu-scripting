@@ -14,4 +14,4 @@ def number_of_subscribers(subreddit):
     if r.status_Code == 200:
         return r['data']['subscribers']
     else:
-        return None
+        return 0

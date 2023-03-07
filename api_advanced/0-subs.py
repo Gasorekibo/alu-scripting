@@ -7,10 +7,11 @@ import requests
 
 
 def number_of_subscribers(subreddit):
-    try:
-        url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-        headers = {'User-Agent': 'Myapi-app'}
-        r = requests.get(url, headers=headers).json()
+    
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    headers = {'User-Agent': 'Myapi-app'}
+    r = requests.get(url, headers=headers).json()
+    if r.status_Code == 200:
         return r['data']['subscribers']
-    except:
+    else:
         return None

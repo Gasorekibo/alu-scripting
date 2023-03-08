@@ -6,7 +6,7 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=''):
-    subreddit_url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+    subreddit_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'Myapi-app'}
     parameter = {'after':after}
 

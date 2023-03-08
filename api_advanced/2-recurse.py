@@ -5,22 +5,21 @@ making a recursive function
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
-    
-    def requesting(url):
-        url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-        headers = {'User-Agent': 'Myapi-app'}
-        r = requests.get(url, headers=headers)
-        if r.status_code == 200:
-            result = r.json()
-            data = result['data']['children']
-            for title in data:
-                hot_list.append(title['data']['title'])
-            after = result['data']['after']
-            if after is None:
-                return None
-            else:
-                return(requesting(after, headers=headers))
-        return None
-    
-    return hot_list
+def recurse(subreddit, hot_list=[], after=None,count = 0):
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    headers = {'User-Agent': 'Myapi-app'}
+    parameter = {'after': after}
+    r = requests.get(url+"?limit=100", headers=headers, param=parameter)
+    if r.status_code == 200:
+        data = r.json()
+        results = data['data']['children']
+        for each in results:
+            hot_list.append(each['data']['title'])
+        
+        after = data['data']['after']
+        if after is None:
+            return hot_list
+        count += 1
+        return recurse(subreddit, after=after,
+                           hot_list=hot_list, count=count)
+    return None

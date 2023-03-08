@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    recursive function using python
+using recursion
 """
 import requests
 

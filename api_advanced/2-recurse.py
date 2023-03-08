@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" using recursion """
+"""
+recursive
+"""
 import requests
 
 

@@ -20,7 +20,7 @@ def recurse(subreddit, hot_list=[]):
             if after is None:
                 return None
             else:
-                return(requesting(after))
+                return(requesting(after, headers=headers))
         return None
     
     return hot_list

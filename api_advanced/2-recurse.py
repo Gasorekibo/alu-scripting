@@ -8,11 +8,10 @@ import requests
 def recurse(subreddit, hot_list=[], after=''):
     subreddit_url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'Myapi-app'}
-    parameter = {'after':after}
+    parameter = {'after': after}
 
-    r = requests.get(subreddit_url, headers=headers,params=parameter,
+    r = requests.get(subreddit_url, headers= headers,params=parameter,
                      allow_redirects=False)
-    
     if r.status_code == 200:
         datas = r.json()
         values = datas['data']['children']

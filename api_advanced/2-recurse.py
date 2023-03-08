@@ -16,10 +16,11 @@ def recurse(subreddit, hot_list=[]):
             data = result['data']['children']
             for title in data:
                 hot_list.append(title['data']['title'])
-                return(hot_list)
             after = result['data']['after']
             if after is None:
                 return None
             else:
                 return(requesting(after))
         return None
+    
+    return hot_list

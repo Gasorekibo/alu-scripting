@@ -10,7 +10,7 @@ def recurse(subreddit, hot_list=[], after=''):
     headers = {'User-Agent': 'Myapi-app'}
     parameter = {'after': after}
 
-    r = requests.get(subreddit_url, headers= headers,params=parameter,
+    r = requests.get(subreddit_url, headers= headers, params=parameter,
                      allow_redirects=False)
     if r.status_code == 200:
         datas = r.json()

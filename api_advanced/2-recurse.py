@@ -23,3 +23,5 @@ def recurse(subreddit, hot_list=[], after=None,count = 0):
         return recurse(subreddit, after=after,
                            hot_list=hot_list, count=count)
     return None
+if __name__ == '__main__':
+    print(recurse("zerowastecz"))

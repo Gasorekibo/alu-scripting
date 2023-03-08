@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-making a recursive function
+python scrip that uses recursive function to 
+retrieve all post title and store them in 
+a list in our case it is hot_list
 """
 import requests
 

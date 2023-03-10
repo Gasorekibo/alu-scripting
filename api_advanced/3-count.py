@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Counting the number of keyword occurence from heads of top post of
 a given subreddit  """
-import json
 import requests
 
 

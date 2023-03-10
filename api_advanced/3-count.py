@@ -2,12 +2,11 @@
 """
 3-count.py
 """
-import json
 import requests
 
 
 def count_words(subreddit, word_list, limit=100, after=None, count=0, posts={}):
-    """ prints a sorted count of given keywords """
+    """prints a sorted count of given keywords"""
     url = "https://www.reddit.com/r/{}/hot.json?limit={limit}".format(subreddit)
     if after:
         url += "&after={}".format(after)

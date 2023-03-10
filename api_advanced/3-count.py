@@ -8,9 +8,9 @@ import requests
 
 def count_words(subreddit, word_list, limit=100, after=None, count=0, posts={}):
     """ prints a sorted count of given keywords """
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit={limit}"
+    url = "https://www.reddit.com/r/{}/hot.json?limit={limit}".format(subreddit)
     if after:
-        url += f"&after={after}"
+        url += "&after={}".format(after)
     headers = {'User-Agent': 'Mozilla/5.0'}
     
     response = requests.get(url, headers=headers)

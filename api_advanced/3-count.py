@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
- counting words
-"""
+""" 3-count.py """
 import requests
 
 

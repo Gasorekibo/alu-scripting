@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-counting word occurence
+counting words
 """
 import requests
 
